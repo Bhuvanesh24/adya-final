@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "7c4a41d9-4fac-40ee-9e71-8721076f844b",
+		"name": "Job Portal API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45713973",
+		"_collection_link": "https://bhuvanesh-1740659.postman.co/workspace/Bhuvanesh's-Workspace~1c9d54c4-9844-488d-8b17-ec3016c5b368/collection/45713973-7c4a41d9-4fac-40ee-9e71-8721076f844b?action=share&source=collection_link&creator=45713973"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n  \"email\": \"bhuvi@example.com\",\r\n  \"password\": \"securepassword123\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "//To add a user\r\n{\r\n   \"name\" : \"Bhuvi\",\r\n   \"email\": \"bhuvi@example.com\",\r\n   \"password\": \"securepassword123\"\r\n}\r\n\r\n\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"jobTitle\": \"Frontend Developer\",\r\n//   \"company\": \"XYZ Inc\",\r\n//   \"yearsOfExperience\": 1,\r\n//   \"description\": \"React projects\"\r\n// }\r\n\r\n// {\r\n//   \"jobPreferences\": {\r\n//     \"titles\": [\"Backend Developer\"],\r\n//     \"locations\": [\"Remote\", \"Bangalore\"],\r\n//     \"jobType\": \"Full-time\",\r\n//     \"industries\": [\"IT\", \"Finance\"],\r\n//     \"expectedSalary\": \"12 LPA\",\r\n//     \"workMode\": \"Remote\",\r\n//     \"relocate\": false\r\n//   }\r\n// }\r\n\r\n\r\n// {\r\n//   \"weeklyTarget\": 10,\r\n//   \"currentWeekCount\": 4\r\n// }\r\n\r\n\r\n{\r\n  \"filePath\": \"/uploads/6855da9e2a8002c5f259513c/resume-1750492277935-706309900.pdf\"\r\n}\r\n\r\n\r\n\r\n\r\n// {\r\n//    \"name\" : \"Bhuvi\",\r\n//   \"email\": \"bhuvi@example.com\",\r\n//   \"password\": \"securepassword123\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"professionalSummary\": \"Experienced full-stack developer with 5 years of experience.\"\r\n// }\r\n\r\n// {\r\n//   \"skills\": [\"JavaScript\", \"React\", \"Node.js\"]\r\n// }\r\n\r\n// {\r\n//   \"skill\": \"JavaScript\"\r\n// }\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Resume",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "resume",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/upload/resume",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"upload",
+						"resume"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Documents",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "resume",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Resume",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"jobTitle\": \"Frontend Developer\",\r\n//   \"company\": \"XYZ Inc\",\r\n//   \"yearsOfExperience\": 1,\r\n//   \"description\": \"React projects\"\r\n// }\r\n\r\n// {\r\n//   \"jobPreferences\": {\r\n//     \"titles\": [\"Backend Developer\"],\r\n//     \"locations\": [\"Remote\", \"Bangalore\"],\r\n//     \"jobType\": \"Full-time\",\r\n//     \"industries\": [\"IT\", \"Finance\"],\r\n//     \"expectedSalary\": \"12 LPA\",\r\n//     \"workMode\": \"Remote\",\r\n//     \"relocate\": false\r\n//   }\r\n// }\r\n\r\n\r\n// {\r\n//   \"weeklyTarget\": 10,\r\n//   \"currentWeekCount\": 4\r\n// }\r\n\r\n\r\n{\r\n  \"filePath\": \"/uploads/6855da9e2a8002c5f259513c/resume-1750492277935-706309900.pdf\"\r\n}\r\n\r\n\r\n\r\n\r\n// {\r\n//    \"name\" : \"Bhuvi\",\r\n//   \"email\": \"bhuvi@example.com\",\r\n//   \"password\": \"securepassword123\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"professionalSummary\": \"Experienced full-stack developer with 5 years of experience.\"\r\n// }\r\n\r\n// {\r\n//   \"skills\": [\"JavaScript\", \"React\", \"Node.js\"]\r\n// }\r\n\r\n// {\r\n//   \"skill\": \"JavaScript\"\r\n// }\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/resume",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"resume"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cover-Letter",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"jobTitle\": \"Frontend Developer\",\r\n//   \"company\": \"XYZ Inc\",\r\n//   \"yearsOfExperience\": 1,\r\n//   \"description\": \"React projects\"\r\n// }\r\n\r\n// {\r\n//   \"jobPreferences\": {\r\n//     \"titles\": [\"Backend Developer\"],\r\n//     \"locations\": [\"Remote\", \"Bangalore\"],\r\n//     \"jobType\": \"Full-time\",\r\n//     \"industries\": [\"IT\", \"Finance\"],\r\n//     \"expectedSalary\": \"12 LPA\",\r\n//     \"workMode\": \"Remote\",\r\n//     \"relocate\": false\r\n//   }\r\n// }\r\n\r\n\r\n// {\r\n//   \"weeklyTarget\": 10,\r\n//   \"currentWeekCount\": 4\r\n// }\r\n\r\n\r\n{\r\n  \"filePath\": \"/uploads/6855da9e2a8002c5f259513c/coverLetter-1750492325742-594599921.pdf\"\r\n}\r\n\r\n\r\n\r\n\r\n// {\r\n//    \"name\" : \"Bhuvi\",\r\n//   \"email\": \"bhuvi@example.com\",\r\n//   \"password\": \"securepassword123\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"professionalSummary\": \"Experienced full-stack developer with 5 years of experience.\"\r\n// }\r\n\r\n// {\r\n//   \"skills\": [\"JavaScript\", \"React\", \"Node.js\"]\r\n// }\r\n\r\n// {\r\n//   \"skill\": \"JavaScript\"\r\n// }\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/cover-letter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"cover-letter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark notifications as read",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"jobTitle\": \"Frontend Developer\",\r\n//   \"company\": \"XYZ Inc\",\r\n//   \"yearsOfExperience\": 1,\r\n//   \"description\": \"React projects\"\r\n// }\r\n\r\n// {\r\n//   \"jobPreferences\": {\r\n//     \"titles\": [\"Backend Developer\"],\r\n//     \"locations\": [\"Remote\", \"Bangalore\"],\r\n//     \"jobType\": \"Full-time\",\r\n//     \"industries\": [\"IT\", \"Finance\"],\r\n//     \"expectedSalary\": \"12 LPA\",\r\n//     \"workMode\": \"Remote\",\r\n//     \"relocate\": false\r\n//   }\r\n// }\r\n\r\n\r\n// {\r\n//   \"weeklyTarget\": 10,\r\n//   \"currentWeekCount\": 4\r\n// }\r\n\r\n\r\n// {\r\n//   \"filePath\": \"/uploads/6855da9e2a8002c5f259513c/resume-1750492522497-973891655.pdf\"\r\n// }\r\n\r\n// {\r\n//   \"message\": \"New job alert available\",\r\n//   \"type\": \"info\"\r\n// }\r\n\r\n{\r\n    \"notificationId\" : \"685666ce03e5fb4e2812690f\"\r\n}\r\n\r\n// {\r\n//    \"name\" : \"Bhuvi\",\r\n//   \"email\": \"bhuvi@example.com\",\r\n//   \"password\": \"securepassword123\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"professionalSummary\": \"Experienced full-stack developer with 5 years of experience.\"\r\n// }\r\n\r\n// {\r\n//   \"skills\": [\"JavaScript\", \"React\", \"Node.js\"]\r\n// }\r\n\r\n// {\r\n//   \"skill\": \"JavaScript\"\r\n// }\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/notifications/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"notifications",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update application status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"jobTitle\": \"ML Developer\",\r\n//   \"company\": \"OpenAI\",\r\n//   \"location\": \"USA\",\r\n//   \"jobLink\": \"https://careers.openai.com\",\r\n//   \"jobDescription\": \"AI Researcher role\",\r\n//   \"currentStatus\": \"applied\"\r\n// }\r\n{\r\n    \"location\": \"USA\",\r\n    \"jobDescription\": \"Ml developer role\",\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// {\r\n//   \"jobTitle\": \"Frontend Developer\",\r\n//   \"company\": \"XYZ Inc\",\r\n//   \"yearsOfExperience\": 1,\r\n//   \"description\": \"React projects\"\r\n// }\r\n\r\n// {\r\n//   \"jobPreferences\": {\r\n//     \"titles\": [\"Backend Developer\"],\r\n//     \"locations\": [\"Remote\", \"Bangalore\"],\r\n//     \"jobType\": \"Full-time\",\r\n//     \"industries\": [\"IT\", \"Finance\"],\r\n//     \"expectedSalary\": \"12 LPA\",\r\n//     \"workMode\": \"Remote\",\r\n//     \"relocate\": false\r\n//   }\r\n// }\r\n\r\n\r\n// {\r\n//   \"weeklyTarget\": 10,\r\n//   \"currentWeekCount\": 4\r\n// }\r\n\r\n\r\n// {\r\n//   \"filePath\": \"/uploads/6855da9e2a8002c5f259513c/resume-1750492522497-973891655.pdf\"\r\n// }\r\n\r\n// {\r\n//   \"message\": \"New job alert available\",\r\n//   \"type\": \"info\"\r\n// }\r\n\r\n// {\r\n//     \"notificationId\" : \"685666ce03e5fb4e2812690f\"\r\n// }\r\n\r\n// {\r\n//    \"name\" : \"Bhuvi\",\r\n//   \"email\": \"bhuvi@example.com\",\r\n//   \"password\": \"securepassword123\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"professionalSummary\": \"Experienced full-stack developer with 5 years of experience.\"\r\n// }\r\n\r\n// {\r\n//   \"skills\": [\"JavaScript\", \"React\", \"Node.js\"]\r\n// }\r\n\r\n// {\r\n//   \"skill\": \"JavaScript\"\r\n// }\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/applications/6856768897c480f863848d5e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"applications",
+						"6856768897c480f863848d5e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Application",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"jobTitle\": \"Full-Stack Developer - AI Integration\",\r\n  \"jobDescription\": \"We’re seeking a passionate Full-Stack Developer who thrives at the intersection of backend development and AI integration. As part of our agile product team, you'll be responsible for developing and scaling web applications that harness the power of AI for real-world user workflows.\\n\\n✅ Responsibilities:\\nDesign, develop, and maintain scalable full-stack applications using React.js, Node.js/Express, and MongoDB.\\n\\nIntegrate AI/ML capabilities using OpenAI, Hugging Face, or similar LLM APIs to build intelligent features like resume analysis, content generation, and predictions.\\n\\nImplement and manage secure REST APIs, authentication (JWT), and file upload functionality (e.g., resume PDFs).\\n\\nWork with asynchronous processing (e.g., video/image parsing, PDF text extraction).\\n\\nBuild admin dashboards, user profile management, and multi-role access control systems.\\n\\nCollaborate with UI/UX teams and convert Figma wireframes into responsive components.\\n\\nWrite clean, modular code and maintain test coverage using tools like Jest or Mocha.\\n\\n🧠 Must-Have Skills:\\nStrong proficiency in JavaScript/TypeScript\\n\\nExperience with React.js for frontend development\\n\\nExperience with Node.js + Express for backend APIs\\n\\nMongoDB or similar NoSQL database\\n\\nIntegration with OpenAI or Hugging Face Inference API\\n\\nHandling of file uploads (PDF/Resume parsing), form submissions, and authentication flows (JWT)\\n\\nBasic DevOps (e.g., deployment to Vercel/Render/Netlify/Heroku)\",\r\n  \"companyName\": \"AIFlow Technologies\",\r\n  \"experienceLevel\" : \"1-2years\" \r\n//   \"userName\": \"Bhuvaneshwaran K\",\r\n//   \"userSkills\": \"React.js, Node.js, Express, MongoDB, OpenAI API, Hugging Face API, JWT Authentication, Resume Parsing, REST API development\",\r\n//   \"userExperience\": \"Developed full-stack AI-enabled job application platforms. Integrated OpenAI and Hugging Face APIs for resume analysis, cover letter generation, and job matching. Built secure authentication flows, dashboards, and admin panels using MERN stack.\"\r\n}\r\n\r\n\r\n\r\n\r\n// {\r\n//   \"title\": \"AI Engineer\",\r\n//   \"company\": {\r\n//     \"name\": \"OpenAI\",\r\n//     \"website\": \"https://openai.com\",\r\n//     \"industry\": \"Artificial Intelligence\",\r\n//     \"location\": \"Remote\"\r\n//   },\r\n//   \"jobType\": \"Full-time\",\r\n//   \"status\": true,\r\n//   \"source\": \"Manual\",\r\n//   \"url\": \"https://openai.com/careers/ai-engineer\",\r\n//   \"description\": \"Join OpenAI as an AI Engineer working on foundational models.\",\r\n//   \"responsibilities\": [\"Build models\", \"Optimize inference\"],\r\n//   \"requirements\": [\"3+ years ML experience\", \"Strong Python skills\"],\r\n//   \"salary\": {\r\n//     \"min\": 150000,\r\n//     \"max\": 200000,\r\n//     \"currency\": \"USD\"\r\n//   },\r\n//   \"workMode\": \"Remote\",\r\n//   \"tags\": [\"Python\", \"ML\", \"AI\", \"NLP\"]\r\n// }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// {\r\n//   \"jobTitle\": \"ML Developer\",\r\n//   \"company\": \"OpenAI\",\r\n//   \"location\": \"USA\",\r\n//   \"jobLink\": \"https://careers.openai.com\",\r\n//   \"jobDescription\": \"AI Researcher role\",\r\n//   \"currentStatus\": \"applied\"\r\n// }\r\n// {\r\n//     \"applicationId\" : \"6856768897c480f863848d5e\",\r\n//     \"location\": \"USA\",\r\n//     \"jobDescription\": \"Ml developer role\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"applicationId\" : \"6856733697c480f863848d4e\",\r\n//   \"status\": \"under review\",\r\n//   \"note\": \"Reviewed by HR\"\r\n// }\r\n\r\n// {\r\n//   \"applicationId\" : \"6856733697c480f863848d4e\",\r\n//   \"mode\": \"email\",\r\n//   \"summary\": \"Initial contact with recruiter\",\r\n//   \"contactPerson\": \"John Doe\"\r\n// }\r\n\r\n\r\n// {\r\n//   \"applicationId\": \"6856733697c480f863848d4e\",\r\n//   \"reminderId\" : \"68567a66503b6e502db1c3ca\",\r\n//   \"isCompleted\": true\r\n// }\r\n\r\n\r\n\r\n\r\n// {\r\n//   \"applicationId\" : \"6856733697c480f863848d4e\",\r\n//   \"notes\": \"Waiting for callback after first interview.\"\r\n// }\r\n\r\n\r\n\r\n// {\r\n//   \"jobTitle\": \"Frontend Developer\",\r\n//   \"company\": \"XYZ Inc\",\r\n//   \"yearsOfExperience\": 1,\r\n//   \"description\": \"React projects\"\r\n// }\r\n\r\n// {\r\n//   \"jobPreferences\": {\r\n//     \"titles\": [\"Backend Developer\"],\r\n//     \"locations\": [\"Remote\", \"Bangalore\"],\r\n//     \"jobType\": \"Full-time\",\r\n//     \"industries\": [\"IT\", \"Finance\"],\r\n//     \"expectedSalary\": \"12 LPA\",\r\n//     \"workMode\": \"Remote\",\r\n//     \"relocate\": false\r\n//   }\r\n// }\r\n\r\n\r\n// {\r\n//   \"weeklyTarget\": 10,\r\n//   \"currentWeekCount\": 4\r\n// }\r\n\r\n\r\n// {\r\n//   \"filePath\": \"/uploads/6855da9e2a8002c5f259513c/resume-1750492522497-973891655.pdf\"\r\n// }\r\n\r\n// {\r\n//   \"message\": \"New job alert available\",\r\n//   \"type\": \"info\"\r\n// }\r\n\r\n// {\r\n//     \"notificationId\" : \"685666ce03e5fb4e2812690f\"\r\n// }\r\n\r\n// {\r\n//   \"email\": \"bhuvi@example.com\",\r\n//   \"password\": \"test123\"\r\n\r\n// }\r\n\r\n\r\n// {\r\n//   \"professionalSummary\": \"Experienced full-stack developer with 5 years of experience.\"\r\n// }\r\n\r\n// {\r\n//   \"skills\": [\"JavaScript\", \"React\", \"Node.js\"]\r\n// }\r\n\r\n// {\r\n//   \"skill\": \"JavaScript\"\r\n// }\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/applications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"applications",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
