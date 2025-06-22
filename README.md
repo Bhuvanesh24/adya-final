@@ -1,88 +1,124 @@
-Reminder Management App
-This is a full-stack reminder management application that allows users to register, log in, and create, update, and delete reminders. The application supports secure authentication, persistent storage using MongoDB, and is deployed to the cloud.
+Job Application Management System:
 
-Project Overview
-The app allows users to:
+This is a full-stack intelligent job application management platform that helps job seekers streamline and optimize their job search process. The platform includes features for organizing applications, enhancing resumes, preparing for interviews, setting reminders, and tracking search progress — all enhanced with AI-powered tools.
 
-Register and log in with secure authentication
+Project Objective:
 
-Create reminders with titles, descriptions, and due dates
+To build a comprehensive job application tracking system that uses AI to offer personalized recommendations, resume and cover letter optimization, and interview preparation — enabling users to improve job search outcomes efficiently.
 
-View a list of all reminders
+# Key Features
+# User Authentication
+Secure sign-up and login with JWT authentication
 
-Edit and delete existing reminders
+Complete user profile: experience, skills, job preferences
 
-Use an AI assistant to summarize or suggest reminders (if enabled)
+Store and manage multiple resumes and cover letters
+
+# Job Application Management
+Track statuses: applied, interview scheduled, offered, rejected, etc.
+
+Add notes, interview schedules, and communication history
+
+Set reminders for follow-ups and interviews
+
+View application timeline and job search statistics
+
+# AI-Powered Features
+Resume analyzer with job-specific optimization tips
+
+Cover letter generator tailored to job descriptions
+
+Interview question predictor and answer suggestions
+
+Success probability analysis with personalized improvement tips
+
+# Job Search Integration
+Manual job entry or API integration with external job boards
+
+Smart job recommendations based on user profiles
+
+Company research (news, Glassdoor-style reviews)
+
+Salary benchmarks and negotiation suggestions
+
+# Progress Dashboard
+Visual pipeline of application stages
+
+Weekly goals and activity summaries
+
+Analytics on outcome trends and areas to improve
+
+Smart suggestions to increase engagement and success
 
 Technology Stack
-Frontend: React.js, Tailwind CSS
+# Backend
+Node.js with Express
 
-Backend: Node.js, Express.js
+MongoDB with Mongoose
 
-Database: MongoDB
+JWT for secure user authentication
 
-Authentication: JWT-based authentication using HTTP-only cookies
+# Frontend
+React.js with Hooks
 
-Deployment: Render (can also be hosted on AWS/GCP/Azure)
+Tailwind CSS for sleek, responsive UI
 
-AI Integration: Hugging Face Inference API (if applicable)
+Redux for state management
 
-Project Setup
-Clone the repository
+# AI Tools
+Resume & cover letter optimization: Hugging Face Inference API
 
-bash
-git clone https://github.com/yourusername/reminder-app.git
-cd reminder-app
+Model used: deepseek-ai/DeepSeek-V3-0324
 
-Install dependencies
+Interview preparation and insights: ClaudeAI, ChatGPT
 
-bash
+# bash
 
+
+# Clone the repository
+git clone https://github.com/yourusername/job-app-tracker.git
+cd job-app-tracker
+
+# Backend setup
 cd backend
+cp .env.example .env
 npm install
+npm run dev
 
+# Frontend setup
 cd ../frontend
 npm install
-
-
-
-Create a .env file in the root of the backend folder using the .env.example file
-
-
-# In backend folder
 npm run dev
 
-# In frontend folder
-npm run dev
 
-Folder Structure
-The backend and frontend are organized in separate folders with modular components and clean architecture. The backend uses a controller-service-model structure and the frontend is built using reusable components and routes.The env file is located in backend folder
+External APIs
+Job Search API: via RapidAPI
+AI Services: Hugging Face
 
-# AI Tools Used
-Hugging Face Inference API was used to demonstrate AI integration by summarizing reminder descriptions or suggesting reminders.
-ClaudeAI,ChatGpt
+AI Used:
+Claude,ChatGpt
 
 
-# Testing
-API testing was performed using Postman
-Postman was used for API testing and collection generation.
-Test report is available in docs/test-report.md
+Testing:
 
-The Postman collection is included as docs/api-tests.postman_collection.json
+API tested using Postman
 
-# Deployment
-The application is deployed using AWS 
+Collection available at: docs/api-tests.postman_collection.json
 
-Deployed URL: [Your Render/AWS/GCP Link]
+Test report: docs/test-report.md
 
-# Documentation
-Wireframes are available in docs/wireframes/
+Documentation:
 
-Architecture and flow diagrams are available in docs/
+Wireframes: docs/wireframes/
 
-Business Requirements Document (BRD) is included in docs/BRD.md
+Architecture Diagrams: docs/architecture.pdf
 
-Test report and Postman collection are included in the docs/ folder
+Business Requirements Document: docs/BRD.md
 
-# Demo Video
-The demonstration video of the application with feature walkthrough and functionality is available here: [Your video link]
+Test Reports & API Collection: docs/
+
+
+Deployment
+Hosted on: AWS
+
+🔗 Live Demo:  http://buvanesh-adya.s3-website.eu-north-1.amazonaws.com/

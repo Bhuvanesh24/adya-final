@@ -13,7 +13,7 @@ import {
 
 
 } from '../controllers/application.controller.js';
-import { requireAuth } from '../middlewares/auth.js'; // Assuming you have auth middleware
+import { requireAuth } from '../middlewares/auth.js'; 
 
 const router = express.Router();
 
