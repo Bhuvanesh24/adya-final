@@ -90,6 +90,7 @@ cd ../frontend
 npm install
 npm run dev
 
+.env example in backend folder
 
 External APIs
 Job Search API: via RapidAPI
