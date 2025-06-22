@@ -16,15 +16,17 @@ import { requireAuth } from '../middlewares/auth.js';
 
 const router = express.Router();
 
-// Public routes (no authentication required)
+// Protected routes (authentication required)
+router.use(requireAuth);
+
+
 router.get('/search', searchJobsFromAPI); // Search jobs from external API
 router.get('/company/:companyName/insights', getCompanyInsights); // Get company insights
 router.get('/salary-data', getSalaryData); // Get salary data
 router.get('/all', getAllJobs); // Get all manual jobs with filters
 router.get('/:id', getJobById); // Get specific job by ID
 
-// Protected routes (authentication required)
-router.use(requireAuth);
+
 
 // Primary job search route - combines manual + API based on user preferences
 router.get('/', getJobsByUserPreferences); // Main job search based on user skills/preferences

@@ -58,24 +58,24 @@ npm run dev
 Folder Structure
 The backend and frontend are organized in separate folders with modular components and clean architecture. The backend uses a controller-service-model structure and the frontend is built using reusable components and routes.The env file is located in backend folder
 
-AI Tools Used
+# AI Tools Used
 Hugging Face Inference API was used to demonstrate AI integration by summarizing reminder descriptions or suggesting reminders.
+ClaudeAI,ChatGpt
 
-Postman was used for API testing and collection generation.
 
-Testing
+# Testing
 API testing was performed using Postman
-
+Postman was used for API testing and collection generation.
 Test report is available in docs/test-report.md
 
 The Postman collection is included as docs/api-tests.postman_collection.json
 
-Deployment
+# Deployment
 The application is deployed using AWS 
 
 Deployed URL: [Your Render/AWS/GCP Link]
 
-Documentation
+# Documentation
 Wireframes are available in docs/wireframes/
 
 Architecture and flow diagrams are available in docs/
@@ -84,5 +84,5 @@ Business Requirements Document (BRD) is included in docs/BRD.md
 
 Test report and Postman collection are included in the docs/ folder
 
-Demo Video
+# Demo Video
 The demonstration video of the application with feature walkthrough and functionality is available here: [Your video link]
